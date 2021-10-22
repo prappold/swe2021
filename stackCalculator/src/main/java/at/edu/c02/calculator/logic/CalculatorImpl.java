@@ -32,13 +32,10 @@ public class CalculatorImpl implements Calculator {
 			return a * b;
 
 		case mod:
-			if (a < 0) {
-				return floatModfirst(a, b);
-			} else if (b < 0) {
-				return floatModsecond(a, b);
+			if (a ==0 && b == 0) {
+				throw new CalculatorException("Modulo with zero");
 			}
-			else return floatModfirst(a,b);
-
+			return floatMod(a,b);
 		}
 		return 0;
 	}
@@ -60,14 +57,9 @@ public class CalculatorImpl implements Calculator {
 		stack_.clear();
 	}
 
-	double floatModfirst(double x, double y){
+	double floatMod(double x, double y){
 		// x mod y behaving the same way as Math.floorMod but with doubles
 		return (x - Math.floor(x/y) * y);
-	}
-
-	double floatModsecond(double y, double x){
-		// x mod y behaving the same way as Math.floorMod but with doubles
-		return (y - Math.floor(y/x) * x);
 	}
 
 }
