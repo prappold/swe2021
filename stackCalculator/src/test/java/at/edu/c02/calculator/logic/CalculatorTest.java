@@ -97,13 +97,23 @@ public class CalculatorTest {
 	public void testSimpleModOperation4() throws Exception {
 
 		Calculator calc = new CalculatorImpl();
-		calc.push(0);
-		calc.push(0);
-		double result = calc.perform(Operation.mod);
 
-		assertEquals(0, result, 0);
+		try {
+			calc.push(0);
+			calc.push(0);
+			calc.perform(Operation.mod);
+
+			fail("Exception expected");
+
+
+		} catch (CalculatorException e) {
+			assertEquals("Modulo with zero", e.getMessage());
+			// e.getCause()
+		}
 
 	}
+
+
 
 
 	@Test
