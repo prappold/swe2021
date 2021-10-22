@@ -52,7 +52,43 @@ public class CalculatorTest {
 		assertEquals(3, result, 0);
 
 	}
-	
+
+	@Test
+	public void testSimpleModOperation1() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(20.0);
+		calc.push(10);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(0, result, 0);
+
+	}
+
+	@Test
+	public void testSimpleModOperation2() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(26.0);
+		calc.push(-6.0);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(2, result, 0);
+
+	}
+
+	@Test
+	public void testSimpleModOperation3() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(-45);
+		calc.push(10);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(5, result, 0);
+
+	}
+
 	
 	
 	
