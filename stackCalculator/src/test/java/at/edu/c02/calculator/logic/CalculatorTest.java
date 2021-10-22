@@ -89,6 +89,31 @@ public class CalculatorTest {
 
 	}
 
+	@Test
+	public void testSimpleModOperation4() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(0);
+		calc.push(0);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(0, result, 0);
+
+	}
+
+
+	@Test
+	public void testSimpleModOperation5() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(4);
+		calc.push(84);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(4, result, 0);
+
+	}
+
 	
 	
 	
