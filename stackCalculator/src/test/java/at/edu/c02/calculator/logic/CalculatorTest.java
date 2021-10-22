@@ -68,17 +68,21 @@ public class CalculatorTest {
 	@Test
 	public void testSimpleModOperation2() throws Exception {
 
+		// Windows Rechner ist Referenz
+
 		Calculator calc = new CalculatorImpl();
 		calc.push(26.0);
 		calc.push(-6.0);
 		double result = calc.perform(Operation.mod);
 
-		assertEquals(2, result, 0);
+		assertEquals(-4, result, 0);
 
 	}
 
 	@Test
 	public void testSimpleModOperation3() throws Exception {
+
+		// Windows Rechner ist Referenz
 
 		Calculator calc = new CalculatorImpl();
 		calc.push(-45);
