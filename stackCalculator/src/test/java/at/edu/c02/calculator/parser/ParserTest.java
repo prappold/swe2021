@@ -49,7 +49,7 @@ public class ParserTest {
 		Parser parser = new Parser(cal);
 		parser.parse(new File("src/test/resources/test04.xml"));
 
-		verify(cal).push(20.0);
+		verify(cal).push(21.0);
 		verify(cal).push(5.0);
 		verify(cal).perform(Operation.mod);
 
